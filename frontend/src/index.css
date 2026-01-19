@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+:root {
+
+  --color-fg: #0B1220;           /* 60% — deep slate / charcoal background */
+  --color-bg-rgb: 11,18,32;      /* rgb for rgba overlays */
+  --color-bg: #E6EEF8;           /* 30% — very light text for contrast */
+  --color-accent: #0EA5E9;       /* 10% — cyan accent for CTAs */
+  --radius-brand: 0.5rem;
+}
+
+
