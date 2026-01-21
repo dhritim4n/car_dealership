@@ -1,11 +1,11 @@
-import { Button } from '@mui/joy';
 import AspectRatio from '@mui/joy/AspectRatio';
 import Card from '@mui/joy/Card';
 import CardContent from '@mui/joy/CardContent';
 import CardOverflow from '@mui/joy/CardOverflow';
 import Divider from '@mui/joy/Divider';
 import Typography from '@mui/joy/Typography';
-import Dealer_contact from '../Modals/Dealer_contact';
+import Modal_wrapper from '../Modals/Modal_wrapper';
+import Dealer_info from '../Modals/Dealer_info';
 
 
 export default function Listing_card({ car }) {
@@ -17,23 +17,27 @@ export default function Listing_card({ car }) {
           <img
             src={car.images[0]}
             loading="lazy"
-            alt=""
           />
         </AspectRatio>
       </CardOverflow>
       <CardContent>
         <Typography level="title-md">{car.model}</Typography>
-        <Typography level="body-sm" 
+        <Typography level="body-sm"
           className="pb-2"
         >
-          <span>{car.make}</span>
-          <span
+          <div
+            className='flex justify-between'
           >
-            <Dealer_contact
-              dealerId={car.dealerId}
-            />
-
-          </span>
+            <span>{car.make}</span>
+            <span
+            >
+              <Modal_wrapper
+                name='Dealer Contact '
+              >
+                <Dealer_info dealerId={car.dealerId}/>
+              </Modal_wrapper>
+            </span>
+          </div>
 
         </Typography>
 

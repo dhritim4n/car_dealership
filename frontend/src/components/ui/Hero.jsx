@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
-    <section className="relative h-[80vh] min-h-600px w-full flex items-center justify-center overflow-hidden">
+    <section className="relative h-[80vh]  w-full flex items-center justify-center overflow-hidden">
       {/* Background image */}
       <div
         className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 hover:scale-105"

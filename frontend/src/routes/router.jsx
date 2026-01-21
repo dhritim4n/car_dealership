@@ -3,6 +3,7 @@ import Layout from "../components/layout/Layout";
 import { createBrowserRouter } from "react-router-dom";
 import Car_listing from "../pages/Car_listing";
 import RouterError from "../components/ui/RouterError";
+import Car_details from "../pages/Car_details";
 
 const router = createBrowserRouter([
   {
@@ -11,16 +12,20 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Home/>
+        element: <Home />
       },
       {
         path: 'cars',
-        element: <Car_listing/>
-      }      
+        element: <Car_listing />,
+      },
+      {
+        path: 'car/:car_id',
+        element: <Car_details />
+      }
     ],
   },
 ]);
 
 export {
-    router
+  router
 }
