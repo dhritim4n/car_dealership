@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
-    <section className="relative h-[80vh]  w-full flex items-center justify-center overflow-hidden">
+    <section className="relative h-150  w-full flex items-center justify-center overflow-hidden">
       {/* Background image */}
       <div
         className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 hover:scale-105"
@@ -46,12 +46,16 @@ const Hero = () => {
           >
             View Inventory
           </Link>
-
+          <Link
+            to="/contact"
+          > 
           <button
             className="px-10 py-4 rounded-brand font-bold transition-all border border-white/20 bg-white/10 text-(--color-bg) backdrop-blur-md hover:-translate-y-1"
+
           >
             Contact Us
           </button>
+          </Link>
         </div>
       </div>
     </section>

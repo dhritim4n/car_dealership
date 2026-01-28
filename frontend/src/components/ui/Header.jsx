@@ -11,7 +11,7 @@ export default function Header({ brand = "Car Dealership", nav = null }) {
   const items = nav ?? [
     { to: "/", label: "Home" },
     { to: "/cars", label: "Cars" },
-    { to: "/about", label: "About" },
+    { to: "/dealers", label: "Dealers" },
     { to: "/contact", label: "Contact" },
   ];
 

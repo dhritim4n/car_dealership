@@ -1,30 +1,27 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { cars } from "../data/cars";
-import { dealers } from "../data/dealers"; // Ensure this is imported
-import { Calendar, Gauge, Fuel, Zap, ShieldCheck } from "lucide-react"; // Ensure icons are imported
+import { dealers } from "../data/dealers"; 
+import { Calendar, Gauge, Fuel, Zap, ShieldCheck } from "lucide-react"; 
 
 import { ImageCarousel, SpecBadge, DealerContactCard } from "../components/ui/Car_Details/Details_pg_ui";
 
 export default function Car_details() {
-    // 1. Destructure the ID from params
+    
     const { car_id } = useParams(); 
-    const [carData, setCarData] = useState(null); // Initialize as null
+    const [carData, setCarData] = useState(null); 
     const [dealerData, setDealerData] = useState(null);
 
     useEffect(() => {
-        // 2. Find car first (Convert id to Number to match data type)
         const foundCar = cars.find(car => car.id === Number(car_id));
         
         if (foundCar) {
             setCarData(foundCar);
-            // 3. Find dealer using the foundCar object directly, not the state
             const foundDealer = dealers.find(d => d.id === foundCar.dealerId);
             setDealerData(foundDealer);
         }
-    }, [car_id]); // Re-run if ID changes
+    }, [car_id]); 
 
-    // 4. LOADING GUARD: Prevents 'toLocaleString' crash
     if (!carData || !dealerData) {
         return (
             <div className="min-h-screen flex items-center justify-center bg-slate-50">
